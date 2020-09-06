@@ -6,7 +6,7 @@ ver.1.00
 
 ## 成果物
 掲示板アプリ  
-サンプル→ [TENKUE HOTEL]()
+サンプル→ [TENKUE HOTEL](https://test.takanori-portfolio.com/)
 
 ## 参加要件
 - 環境構築が完了し、指定バージョンに揃えられること（詳細は下記）
@@ -60,11 +60,15 @@ ver.1.00
 1. 指定バージョンに揃える
 1. このリポジトリを下記手順にてクローン
     1. ファシリテーターのGitHubでリポジトリ(A)を作成（リポジトリ名は任意。tenkue-app-r001など）
-    1. チームメンバーにリポジトリへのアクセス権限を付与する
-    1. $ git clone https://github.com/Tenkue/tenkue_hotel_lp.git
-    1. $ cd tenkue_app_lp
-    1. $ git remote set-url origin リポジトリ(A)のURL
-    1. $ git push origin master
+    1. チームメンバーにリポジトリへのアクセス権限を付与する
+    1. $ git clone https://github.com/Tenkue/tenkue_hotel_lp.git
+    1. $ cd tenkue_hotel_lp
+    1. $ git remote set-url origin リポジトリ(A)のURL
+    1. $ git push origin master
+1. npmパッケージをインストール
+    1. $ npm install
+    1. $ npm run start
+    1. $ npm run build(buildする時のみ仕様)
 1. [Trello]()のテンプレートからボードを作成（テンプレートの変更を加えないこと！）してチームメンバー間で共有し、URLをチームチャンネルのトピックに設定
 1. 載っている実装ページをそれぞれ実装開始
 1. 1ブランチの実装が完了したらチーム内でコードレビューを行ってメンバーからLGTMをもらう
