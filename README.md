@@ -64,7 +64,7 @@ ver.1.01
     1. $ git clone https://github.com/Tenkue/tenkue_hotel_lp.git
     1. $ cd tenkue_hotel_lp
     1. $ git remote set-url origin リポジトリ(A)のURL
-    1. $ git push origin master
+    1. $ git push origin master -f
 1. npmパッケージをインストール
     1. $ npm install
     1. $ npm run start(開発用コマンド)
