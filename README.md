@@ -45,6 +45,31 @@ ver.1.01
 ### [追加要件]
 - 本番環境へのデプロイ
 
+### 編集するファイル
+実装箇所によって編集するファイルは決まっている。
+指定以外のファイルに変更を加えると他のページに影響が出るので指定のファイルのみ編集を行う。
+- TOPページ
+  - src/ejs/index.ejs
+  - src/asset/sass/object/project/_top.scss
+- ROOMページ
+  - src/ejs/room/index.ejs
+  - src/asset/sass/object/project/_room.scss
+- AREA GUIDEページ
+  - src/ejs/areaguide/index.ejs
+  - src/asset/sass/object/project/_areaguide.scss
+- ACCESSページ
+  - src/ejs/access/index.ejs
+  - src/asset/sass/object/project/_access.scss
+- CONTACT（フォームの送信機能は実装しない）
+  - src/ejs/contact/index.ejs
+  - src/asset/sass/object/project/_contact.scss
+- Header（ハンバーガーメニューの実装も行う）
+  - src/ejs/_includes/_header.ejs
+  - src/asset/sass/layout/_header.scss
+- Footer
+  - src/ejs/_includes/_footer.ejs
+  - src/asset/sass/layout/_footer.scss
+
 # 共同開発を進める手順
 ## チーム運営
 1. メンターがチームチャンネルを作成して通知します（# 7_2_共同開発_r001。末尾4桁がチーム名です）
