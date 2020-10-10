@@ -19,14 +19,13 @@ $color-gold: #e8e1d3;
 ================================================== */
 @mixin font-size($font-size) {
     font-size: $font-size + px;
-    // font-size: $font-size + rem;
 
     @media screen and (max-width: 576px) {
-        font-size: (3.5vw * $font-size)/ 14;
+        font-size: $font-size + px;
     }
 
     @media screen and (max-width: 1000px) {
-        font-size: (1.75vw * $font-size)/ 14;
+        font-size: $font-size + px;
     }
 
     @media screen and (min-width: 1001px) {
