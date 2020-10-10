@@ -5,7 +5,7 @@ ver.1.02
 共同開発での開発フロー、コミュニケーションの取り方、ツールの使い方を体験すること
 
 ## 成果物
-掲示板アプリ  
+TENKUE HOTEL 
 サンプル→ [TENKUE HOTEL](https://test.takanori-portfolio.com/)
 
 ## 参加要件
