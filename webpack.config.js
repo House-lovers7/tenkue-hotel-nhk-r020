@@ -2,7 +2,6 @@ const path = require('path');
 const webpack = require('webpack');
 const env = process.env.NODE_ENV || 'development';
 const TerserPlugin = require('terser-webpack-plugin');
-const { VueLoaderPlugin } = require('vue-loader');
 
 module.exports = {
     // mode: 'development',
@@ -33,10 +32,6 @@ module.exports = {
                 use: ['vue-style-loader', 'css-loader'],
             },
             {
-                test: /\.vue$/,
-                loader: 'vue-loader',
-            },
-            {
                 // enforce: 'pre'を指定することによって
                 // enforce: 'pre'がついていないローダーより早く処理が実行される
                 // 今回はbabel-loaderで変換する前にコードを検証したいため、指定が必要
@@ -45,23 +40,6 @@ module.exports = {
                 exclude: /node_modules/,
                 loader: 'eslint-loader',
             },
-        ],
-    },
-    resolve: {
-        // Webpackで利用するときの設定
-        alias: {
-            vue$: 'vue/dist/vue.esm.js',
-        },
-        extensions: ['*', '.js', '.vue', '.json'],
-    },
-    plugins: [new VueLoaderPlugin()],
-    optimization: {
-        minimizer: [
-            new TerserPlugin({
-                terserOptions: {
-                    compress: { drop_console: true },
-                },
-            }),
         ],
     },
 };

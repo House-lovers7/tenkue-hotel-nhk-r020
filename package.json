@@ -7,10 +7,7 @@
         "css-loader": "^3.4.2",
         "file-loader": "^5.1.0",
         "jquery": "^3.4.1",
-        "node-sass": "^4.14.1",
-        "vue": "^2.6.11",
-        "vue-loader": "^15.9.0",
-        "vue-template-compiler": "^2.6.11"
+        "node-sass": "^4.14.1"
     },
     "devDependencies": {
         "@babel/core": "^7.8.0",
@@ -34,7 +31,6 @@
         "gulp-notify": "^3.2.0",
         "gulp-plumber": "^1.2.1",
         "gulp-prettify": "^0.5.0",
-        "gulp-pug": "^4.0.1",
         "gulp-rename": "^1.4.0",
         "gulp-replace": "^1.0.0",
         "gulp-sass": "^4.0.2",
@@ -52,7 +48,7 @@
     },
     "scripts": {
         "start": "npx gulp",
-        "build": "NODE_ENV=production npx gulp && webpack"
+        "build": "NODE_ENV=production npx gulp build && webpack"
     },
     "author": "",
     "license": "ISC",

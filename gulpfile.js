@@ -3,7 +3,6 @@ const sass = require('gulp-sass');
 const autoprefixer = require('gulp-autoprefixer');
 const gcmq = require('gulp-group-css-media-queries');
 const htmlmin = require('gulp-htmlmin');
-const pug = require('gulp-pug');
 const ejs = require('gulp-ejs');
 const cleanCSS = require('gulp-clean-css');
 const rimraf = require('rimraf');
@@ -147,34 +146,6 @@ function imageMin() {
         .pipe(gulp.dest(paths.dstDir + '/asset/image'));
 }
 
-// videoをそのまま吐き出す
-function movie() {
-    return gulp.src(paths.srcDir + '/asset/movie/*.*').pipe(gulp.dest(paths.dstDir + '/asset/movie'));
-}
-
-// faviconをそのまま吐き出す
-function favicon() {
-    return gulp.src(paths.srcDir + '/asset/image/*.ico').pipe(gulp.dest(paths.dstDir + '/asset/image'));
-}
-
-// PDFをそのまま吐き出す
-function pdf() {
-    return gulp.src(paths.srcDir + '/asset/pdf/*.*').pipe(gulp.dest(paths.dstDir + '/asset/pdf'));
-}
-
-// JSファイルを圧縮
-// function jsMin(done) {
-//     gulp.watch('./src/js/*.js', function() {
-//         return gulp
-//             .src('./src/js/*.js')
-//             .pipe(gulp.dest('./dist/js'))
-//             .pipe(uglify())
-//             .pipe(rename({ suffix: '.min' }))
-//             .pipe(gulp.dest('./dist/js'));
-//     });
-// done();
-// }
-
 // webpackでjsをbundleしてdistに吐き出し
 function jsBundle(done) {
     return webpackStream(webpackConfig, webpack).pipe(gulp.dest(paths.dstDir + '/asset/js'));
@@ -183,14 +154,10 @@ function jsBundle(done) {
 // srcのファイルに変更があれば自動でリロード
 function watchFile(done) {
     gulp.watch(paths.srcDir + '/**/*.html', htmlMin).on('change', gulp.series(browserReload));
-    gulp.watch(paths.srcDir + '/pug/**/*.pug', pugCompile).on('change', gulp.series(browserReload));
     gulp.watch(paths.srcDir + '/ejs/**/*.ejs', ejsCompile).on('change', gulp.series(browserReload));
     gulp.watch(paths.srcDir + '/asset/sass/**/*.{scss,sass}', sassCompile).on('change', gulp.series(browserReload));
     gulp.watch(paths.srcDir + '/asset/js/**/*.js', jsBundle).on('change', gulp.series(browserReload));
     gulp.watch(paths.srcDir + '/asset/image/*.{jpg,jpeg,png,gif,svg}', imageMin).on('change', gulp.series(browserReload));
-    gulp.watch(paths.srcDir + '/asset/movie/*.*', movie).on('change', gulp.series(browserReload));
-    gulp.watch(paths.srcDir + '/asset/favicon/*.*', favicon).on('change', gulp.series(browserReload));
-    gulp.watch(paths.srcDir + '/asset/pdf/*.*', pdf).on('change', gulp.series(browserReload));
     gulp.series(browserReload);
     done();
 }
@@ -198,7 +165,12 @@ function watchFile(done) {
 // タスクの実行
 exports.default = gulp.series(
     clean,
-    gulp.parallel(htmlMin, pugCompile, ejsCompile, sassCompile, imageMin, movie, favicon, pdf, jsBundle),
+    gulp.parallel(htmlMin, ejsCompile, sassCompile, imageMin, jsBundle),
     sync,
     watchFile
+);
+
+exports.build = gulp.series(
+    clean,
+    gulp.parallel(htmlMin, ejsCompile, sassCompile, imageMin, jsBundle),
 );
