@@ -58,7 +58,7 @@ TENKUE HOTEL
 - ROOMページ
   - src/ejs/room/index.ejs
   - src/asset/sass/object/project/_room.scss
-- AREA GUIDEページ
+- AREA GUIDEページ（モーダルの実装も行う）
   - src/ejs/areaguide/index.ejs
   - src/asset/sass/object/project/_areaguide.scss
   - src/asset/js/modal.js
@@ -68,7 +68,7 @@ TENKUE HOTEL
 - CONTACTページ（フォームの送信機能は実装しない）
   - src/ejs/contact/index.ejs
   - src/asset/sass/object/project/_contact.scss
-- Faqページ
+- Faqページ（アコーディオンの実装も行う）
   - src/ejs/faq/index.ejs
   - src/asset/sass/object/project/_faq.scss
   - src/asset/js/accordion.js
