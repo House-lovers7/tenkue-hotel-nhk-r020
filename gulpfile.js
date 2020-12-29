@@ -2,14 +2,11 @@ const gulp = require('gulp');
 const sass = require('gulp-sass');
 const autoprefixer = require('gulp-autoprefixer');
 const gcmq = require('gulp-group-css-media-queries');
-const htmlmin = require('gulp-htmlmin');
 const ejs = require('gulp-ejs');
-const cleanCSS = require('gulp-clean-css');
 const rimraf = require('rimraf');
 const replace = require('gulp-replace');
 const rename = require('gulp-rename');
 const prettify = require('gulp-prettify');
-// const uglify = require('gulp-uglify');
 const sourcemaps = require('gulp-sourcemaps');
 const browserSync = require('browser-sync').create();
 const imagemin = require('gulp-imagemin');
@@ -18,10 +15,6 @@ const pngquant = require('imagemin-pngquant');
 const plumber = require('gulp-plumber');
 const notify = require('gulp-notify');
 const changed = require('gulp-changed');
-const webpack = require('webpack');
-const webpackStream = require('webpack-stream');
-const webpackConfig = require('./webpack.config');
-// const path = require('path');
 
 var paths = {
     srcDir: './src',
@@ -52,29 +45,6 @@ function clean(cb) {
     return rimraf(paths.dstDir, cb);
 }
 
-// HTMLをMinifyしてdistディレクトリに吐き出す
-function htmlMin() {
-    return gulp
-        .src(paths.srcDir + '/**/*.html')
-        .pipe(htmlmin({ collapseWhitespace: true }))
-        .pipe(gulp.dest(paths.dstDir));
-}
-
-// PugをHTMLにコンパイルしてdistに吐き出し
-function pugCompile() {
-    return (
-        gulp
-            .src([paths.srcDir + '/pug/**/*.pug', '!' + paths.srcDir + '/pug/**/_*.pug'])
-            .pipe(plumber())
-            .pipe(
-                pug({
-                    pretty: true,
-                })
-            )
-            // .pipe(htmlmin({ collapseWhitespace: true }))
-            .pipe(gulp.dest(paths.dstDir))
-    );
-}
 
 // EJSをHTMLにコンパイルしてdistに吐き出し
 function ejsCompile() {
@@ -93,7 +63,7 @@ function ejsCompile() {
         .pipe(gulp.dest(paths.dstDir));
 }
 
-// SassをCSSにコンパイル・Minifyしてdistに吐き出し
+// SassをCSSにコンパイルしてdistに吐き出し
 function sassCompile() {
     return (
         gulp
@@ -113,12 +83,6 @@ function sassCompile() {
             )
             .pipe(sourcemaps.write())
             .pipe(gcmq())
-            // .pipe(cleanCSS())
-            .pipe(
-                rename({
-                    extname: '.min.css',
-                })
-            )
             .pipe(gulp.dest(paths.dstDir + '/asset/css'))
     );
 }
@@ -146,17 +110,19 @@ function imageMin() {
         .pipe(gulp.dest(paths.dstDir + '/asset/image'));
 }
 
-// webpackでjsをbundleしてdistに吐き出し
-function jsBundle(done) {
-    return webpackStream(webpackConfig, webpack).pipe(gulp.dest(paths.dstDir + '/asset/js'));
+// JSをdistに吐き出し
+function js() {
+    return gulp
+        .src(paths.srcDir + '/asset/js/**/*.js')
+        .pipe(changed(paths.dstDir + '/asset/js'))
+        .pipe(gulp.dest(paths.dstDir + '/asset/js'));
 }
 
 // srcのファイルに変更があれば自動でリロード
 function watchFile(done) {
-    gulp.watch(paths.srcDir + '/**/*.html', htmlMin).on('change', gulp.series(browserReload));
     gulp.watch(paths.srcDir + '/ejs/**/*.ejs', ejsCompile).on('change', gulp.series(browserReload));
     gulp.watch(paths.srcDir + '/asset/sass/**/*.{scss,sass}', sassCompile).on('change', gulp.series(browserReload));
-    gulp.watch(paths.srcDir + '/asset/js/**/*.js', jsBundle).on('change', gulp.series(browserReload));
+    gulp.watch(paths.srcDir + '/asset/js/**/*.js', js).on('change', gulp.series(browserReload));
     gulp.watch(paths.srcDir + '/asset/image/*.{jpg,jpeg,png,gif,svg}', imageMin).on('change', gulp.series(browserReload));
     gulp.series(browserReload);
     done();
@@ -165,12 +131,12 @@ function watchFile(done) {
 // タスクの実行
 exports.default = gulp.series(
     clean,
-    gulp.parallel(htmlMin, ejsCompile, sassCompile, imageMin, jsBundle),
+    gulp.parallel(ejsCompile, sassCompile, imageMin, js),
     sync,
     watchFile
 );
 
 exports.build = gulp.series(
     clean,
-    gulp.parallel(htmlMin, ejsCompile, sassCompile, imageMin, jsBundle),
+    gulp.parallel(ejsCompile, sassCompile, imageMin, js),
 );
