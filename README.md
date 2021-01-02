@@ -51,7 +51,7 @@ TENKUE HOTEL
 ### 編集するファイル
 実装箇所によって編集するファイルは決まっている。
 指定以外のファイルに変更を加えると他のページに影響が出るので指定のファイルのみ編集を行う。
-- TOPページ
+- TOPページ（画像スライダーの実装も行う）
   - src/ejs/index.ejs
   - src/asset/sass/object/project/_top.scss
   - src/asset/js/slider.js
