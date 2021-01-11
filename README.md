@@ -30,7 +30,7 @@ TENKUE HOTEL
 - Sass
 - JavaScript または jQuery
 - Node.js 12.14.1
-- 記法：Scss
+- 記法：Scss（下記のFLOCSSの記法に則るものとする）
 - CSS設計：FLOCSSを採用→FLOCSS（https://github.com/hiloki/flocss)
 - ソースコード管理：GitHub
 
@@ -46,7 +46,7 @@ TENKUE HOTEL
 - Footer
 
 ### [追加要件]
-- 本番環境へのデプロイ（デプロイ方法は指定しないがNetlifyが望ましい）
+- 本番環境へのデプロイ（Netlifyを使用）
 
 ### 編集するファイル
 実装箇所によって編集するファイルは決まっている。
@@ -92,7 +92,7 @@ TENKUE HOTEL
 
 ## 開発の流れ
 1. このリポジトリを下記手順にてクローン
-    1. ファシリテーターのGitHubでリポジトリ(A)を作成（リポジトリ名は任意。tenkue-app-r001など）
+    1. GitHubでリポジトリ(A)を作成（リポジトリ名は任意。tenkue-hotel-r001など、末尾3桁をSlackのチャンネル名と合わせることを推奨）
     1. チームメンバーにリポジトリへのアクセス権限を付与する
     1. $ git clone https://github.com/Tenkue/tenkue_hotel_lp.git
     1. $ cd tenkue_hotel_lp
@@ -101,8 +101,9 @@ TENKUE HOTEL
 1. Node.jsを指定バージョンに揃える
 1. npmパッケージをインストール
     1. $ npm install
-    1. $ npm run start(開発用コマンド)
-    1. $ npm run build(本番用コマンド)
+    1. $ npm run start(開発用コマンド)  
+    `npm run start`を叩くとブラウザが立ち上がり、URLは`http://192.168.11.5:3000`となっている。  
+    トップページが表示されている状態になっている。一例としてURLの末尾に`/room/`を追加するとRoomページの内容を確認することができる。
 1. 環境構築を完了していることをメンバー間で確認
 1. [Trello](https://trello.com/b/Ov92RvVD)のテンプレートからボードを作成（テンプレートの変更を加えないこと！）してチームメンバー間で共有し、URLをチームチャンネルのトピックに設定
 1. 実装内容をissueに登録する
@@ -114,6 +115,8 @@ TENKUE HOTEL
 1. 次の機能を実装する
 1. 6〜10を繰り返す
 1. 必須要件の実装が終われば共同開発完了！
+1. Netlifyにてデプロイ（任意）
+    1. $ npm run build(本番用コマンド)を使用する  
 
 ## 注意点・特記事項
 - クローンしたリポジトリは、チームメンバーいずれかのGitHubにプッシュすること（雛形のリポジトリに変更を加えないこと）
@@ -136,3 +139,4 @@ TENKUE HOTEL
 | 1.00 | 2020/09/06 | 初版作成 |
 | 1.02 | 2020/10/03 | 変更 |
 | 1.03 | 2020/12/29 | 変更 |
+| 1.04 | 2021/01/11 | 変更 |
