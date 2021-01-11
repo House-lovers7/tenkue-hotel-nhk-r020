@@ -17,11 +17,12 @@
         "gulp": "^4.0.2",
         "gulp-autoprefixer": "^7.0.1",
         "gulp-changed": "^4.0.2",
-        "gulp-clean-css": "^4.2.0",
+        "gulp-clean-css": "^4.3.0",
         "gulp-cli": "^2.2.0",
         "gulp-ejs": "^5.0.0",
         "gulp-group-css-media-queries": "^1.2.2",
         "gulp-imagemin": "^6.2.0",
+        "gulp-mode": "^1.0.2",
         "gulp-notify": "^3.2.0",
         "gulp-plumber": "^1.2.1",
         "gulp-prettify": "^0.5.0",
@@ -38,7 +39,7 @@
     },
     "scripts": {
         "start": "npx gulp",
-        "build": "NODE_ENV=production npx gulp build && webpack"
+        "build": "NODE_ENV=production npx gulp build --production"
     },
     "author": "",
     "license": "ISC",

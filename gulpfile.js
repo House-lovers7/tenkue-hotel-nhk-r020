@@ -2,6 +2,7 @@ const gulp = require('gulp');
 const sass = require('gulp-sass');
 const autoprefixer = require('gulp-autoprefixer');
 const gcmq = require('gulp-group-css-media-queries');
+const cleanCSS = require("gulp-clean-css");
 const ejs = require('gulp-ejs');
 const rimraf = require('rimraf');
 const replace = require('gulp-replace');
@@ -13,8 +14,14 @@ const imagemin = require('gulp-imagemin');
 const mozjpeg = require('imagemin-mozjpeg');
 const pngquant = require('imagemin-pngquant');
 const plumber = require('gulp-plumber');
+const uglify = require('gulp-uglify');
 const notify = require('gulp-notify');
 const changed = require('gulp-changed');
+const mode = require("gulp-mode")({
+    modes: ["production", "development"],
+    default: "development",
+    verbose: false,
+});
 
 var paths = {
     srcDir: './src',
@@ -83,6 +90,7 @@ function sassCompile() {
             )
             .pipe(sourcemaps.write())
             .pipe(gcmq())
+            .pipe(mode.production(cleanCSS()))
             .pipe(gulp.dest(paths.dstDir + '/asset/css'))
     );
 }
@@ -115,6 +123,7 @@ function js() {
     return gulp
         .src(paths.srcDir + '/asset/js/**/*.js')
         .pipe(changed(paths.dstDir + '/asset/js'))
+        .pipe(mode.production(uglify()))
         .pipe(gulp.dest(paths.dstDir + '/asset/js'));
 }
 
