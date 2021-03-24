@@ -4,6 +4,11 @@
     margin-left: auto;
     max-width: 1024px;
     padding: 60px 0;
+
+  }
+
+  &__space {
+    padding: 0 30px;
   }
 
   &__title {
@@ -25,5 +30,27 @@
     color: white;
     text-align: center;
     background-color: #3683cc;
+  }
+
+  &__area-guide {
+    display: flex;
+    justify-content: space-between;
+    &__list {
+      width: 45%;
+    }
+
+
+
+    &__img {
+      display: inline-flex;
+      justify-content: space-between;
+      margin-top: 5%;
+      margin-bottom: 5%;
+      img {
+        width: 23%;
+      }
+    }
+
+    
   }
 }
