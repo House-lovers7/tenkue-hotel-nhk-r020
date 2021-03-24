@@ -50,7 +50,27 @@
         width: 23%;
       }
     }
+  }
 
+
+  &__room {
+
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
     
+    &__item {
+      width: 30%;
+      
+      .p-top__text {
+        
+      }
+    }
+
+    &__subtitle {
+      font-size: 20px;
+    }
+
+ 
   }
 }
