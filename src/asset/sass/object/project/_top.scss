@@ -1,6 +1,7 @@
 .p-top {
   
   // 共通部分ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+  padding-top: 80px;
 
   &__container{
     margin-right: auto;
@@ -33,6 +34,22 @@
     color: white;
     text-align: center;
     background-color: #3683cc;
+  }
+  // スライダーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+
+  .swiper-container {
+    width: 100%;
+    height: calc(70vh - 80px);
+
+    img {
+        min-width: 100%;    
+        width: auto;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+          
+    }
   }
 
   // エリアガイドーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
