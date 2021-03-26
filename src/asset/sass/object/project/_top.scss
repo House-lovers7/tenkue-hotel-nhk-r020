@@ -1,4 +1,7 @@
 .p-top {
+  
+  // 共通部分ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+
   &__container{
     margin-right: auto;
     margin-left: auto;
@@ -24,13 +27,15 @@
 
   &__button {
     display: block;
-    margin:20px auto 30px auto;
+    margin:5% auto 0px auto;
     max-width: 400px;
     padding: 0.6em 0.2em;
     color: white;
     text-align: center;
     background-color: #3683cc;
   }
+
+  // エリアガイドーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 
   &__area-guide {
     display: flex;
@@ -39,19 +44,18 @@
       width: 45%;
     }
 
-
-
     &__img {
       display: inline-flex;
       justify-content: space-between;
-      margin-top: 5%;
-      margin-bottom: 5%;
+      margin-top: 10%;
+
       img {
         width: 23%;
       }
     }
   }
 
+  //ルームーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 
   &__room {
 
@@ -70,7 +74,21 @@
     &__subtitle {
       font-size: 20px;
     }
-
- 
   }
+
+  //アクセスーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+
+  &__access {
+    display: flex;
+    justify-content: space-between;
+    
+    &__list {
+      width: 45%;
+      
+      iframe {
+        width: 100%;
+      }
+    }
+  }
+  
 }
