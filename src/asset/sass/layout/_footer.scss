@@ -1,2 +1,54 @@
 .l-footer {
+  background-color: #00478b;
+  color: #fff;
+
+  &__inner {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  &__container {
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo {
+    img {
+        width: auto;
+        height: 20px;
+    }
+  }
+
+  li {
+    list-style: none;
+  }
+
+  &__nav {
+    display: flex;
+
+    &__item {
+      &:not(:first-child) {
+          margin-left: 2rem;
+      }
+      a {
+          color: #fff;
+      }
+    }
+  }
+
+  &__nav__link {
+    letter-spacing: 0.1rem;
+  }
+
+  &__copyright {
+    display: block;
+    text-align: center;
+    a {
+        color: #fff;
+    }
+  }
+
+
 }
