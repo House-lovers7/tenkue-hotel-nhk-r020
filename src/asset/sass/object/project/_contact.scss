@@ -1,2 +1,39 @@
-.p-contact {
+.p-contact__mv{
+    width: 100%;
+    height: 60vh;
+    background-image: url(/asset/image/contact_01.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+
+.p-contact__inner {
+    padding-block-end: 75%;
+}
+
+
+.l-content-wrap-default {
+    position: relative;
+    max-width: 1024px;
+    margin-right: auto;
+    margin-left: auto;
+    box-sizing: content-box !important;
+    padding-right: 2.4% !important;
+    padding-left: 2.4% !important;
+}
+
+.c-title {
+    margin-bottom: 40px;
+}
+
+.p-contact__subtitle {
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.p-contact__text {
+    margin-bottom: 60px;
+    text-align: center;
 }
