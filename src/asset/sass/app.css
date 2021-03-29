@@ -1,0 +1,502 @@
+@charset "UTF-8";
+/* ==========================================================================
+    Reset
+   ========================================================================== */
+/*
+html5doctor.com Reset Stylesheet
+v1.6.1
+Last Updated: 2010-09-17
+Author: Richard Clark - http://richclarkdesign.com
+Twitter: @rich_clark
+*/
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+body {
+  line-height: 1;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+nav ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+/* change colours to suit your needs */
+ins {
+  background-color: #ff9;
+  color: #000;
+  text-decoration: none;
+}
+
+/* change colours to suit your needs */
+mark {
+  background-color: #ff9;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+abbr[title],
+dfn[title] {
+  border-bottom: 1px dotted;
+  cursor: help;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* change border colour to suit your needs */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #cccccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+input,
+select {
+  vertical-align: middle;
+}
+
+/* ==========================================================================
+    Base
+    ========================================================================== */
+/* フォントサイズ
+  @include font-size(14)
+  こんな感じで記述する。
+  vwなのでスマホのとき、でかすぎる時があるので、
+  大きい文字(fs32とか)は、SPのみ、
+  font-size: 6vw; こんな感じで上書きすることを許す。
+================================================== */
+/* ==================================
+// メディアクエリ
+===================================== */
+.u-pc {
+  display: block;
+}
+
+@media screen and (max-width: 1000px) {
+  .u-pc {
+    display: none !important;
+  }
+}
+
+.u-tab {
+  display: none;
+}
+
+@media screen and (max-width: 1000px) {
+  .u-tab {
+    display: block;
+  }
+}
+
+.u-sp {
+  display: none;
+}
+
+@media screen and (max-width: 576px) {
+  .u-sp {
+    display: block !important;
+  }
+}
+
+body {
+  font-family: 'Vollkorn', 'Noto Serif JP', sans-serif;
+  color: #222;
+  line-height: 2;
+}
+
+/* IE表示用のCSS　*/
+img {
+  width: 100%;
+}
+
+h1 {
+  font-size: 48px;
+}
+
+@media screen and (max-width: 576px) {
+  h1 {
+    font-size: 48px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  h1 {
+    font-size: 48px;
+  }
+}
+
+@media screen and (min-width: 1001px) {
+  h1 {
+    font-size: 48px;
+  }
+}
+
+@media print {
+  h1 {
+    font-size: 48px;
+  }
+}
+
+h2 {
+  font-size: 32px;
+}
+
+@media screen and (max-width: 576px) {
+  h2 {
+    font-size: 32px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  h2 {
+    font-size: 32px;
+  }
+}
+
+@media screen and (min-width: 1001px) {
+  h2 {
+    font-size: 32px;
+  }
+}
+
+@media print {
+  h2 {
+    font-size: 32px;
+  }
+}
+
+h3 {
+  font-size: 24px;
+}
+
+@media screen and (max-width: 576px) {
+  h3 {
+    font-size: 24px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  h3 {
+    font-size: 24px;
+  }
+}
+
+@media screen and (min-width: 1001px) {
+  h3 {
+    font-size: 24px;
+  }
+}
+
+@media print {
+  h3 {
+    font-size: 24px;
+  }
+}
+
+p {
+  font-size: 16px;
+}
+
+@media screen and (max-width: 576px) {
+  p {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  p {
+    font-size: 16px;
+  }
+}
+
+@media screen and (min-width: 1001px) {
+  p {
+    font-size: 16px;
+  }
+}
+
+@media print {
+  p {
+    font-size: 16px;
+  }
+}
+
+a {
+  color: #222;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+@media screen and (max-width: 576px) {
+  a {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  a {
+    font-size: 16px;
+  }
+}
+
+@media screen and (min-width: 1001px) {
+  a {
+    font-size: 16px;
+  }
+}
+
+@media print {
+  a {
+    font-size: 16px;
+  }
+}
+
+/* ==================================
+レイアウト
+===================================== */
+.l-content-wrap {
+  max-width: 1366px;
+  margin-right: auto;
+  margin-left: auto;
+  -webkit-box-sizing: content-box !important;
+          box-sizing: content-box !important;
+  padding-right: 2.4% !important;
+  padding-left: 2.4% !important;
+}
+
+@media screen and (max-width: 1000px) {
+  .l-content-wrap {
+    max-width: 100%;
+    padding-right: 3% !important;
+    padding-left: 3% !important;
+    -webkit-box-sizing: border-box !important;
+            box-sizing: border-box !important;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .l-content-wrap {
+    max-width: 100%;
+    padding-right: 5% !important;
+    padding-left: 5% !important;
+    -webkit-box-sizing: border-box !important;
+            box-sizing: border-box !important;
+  }
+}
+
+/* レイアウト */
+.l-content-wrap-default {
+  position: relative;
+  max-width: 1024px;
+  margin-right: auto;
+  margin-left: auto;
+  -webkit-box-sizing: content-box !important;
+          box-sizing: content-box !important;
+  padding-right: 2.4% !important;
+  padding-left: 2.4% !important;
+}
+
+@media screen and (max-width: 1000px) {
+  .l-content-wrap-default {
+    max-width: 100%;
+    padding-right: 3% !important;
+    padding-left: 3% !important;
+    -webkit-box-sizing: border-box !important;
+            box-sizing: border-box !important;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .l-content-wrap-default {
+    max-width: 100%;
+    padding-right: 5% !important;
+    padding-left: 5% !important;
+    -webkit-box-sizing: border-box !important;
+            box-sizing: border-box !important;
+  }
+}
+
+.c-title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.c-title::after {
+  content: '';
+  width: 40px;
+  height: 2px;
+  background-color: #00478b;
+  top: 0;
+  /* 位置指定 */
+  bottom: 0;
+  /* 位置指定 */
+  left: 0;
+  /* 位置指定 */
+  right: 0;
+  /* 位置指定 */
+  margin: auto;
+  /* 中央寄せ */
+  display: block;
+}
+
+.p-access__mv {
+  width: 100%;
+  height: 60vh;
+  background-image: url(/asset/image/access_01.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+.p-access__inner {
+  padding-top: 75px;
+}
+
+.p-access__imgWrap {
+  margin-bottom: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.p-access__imgWrap img {
+  width: 23%;
+  margin-bottom: 10px;
+}
+
+.p-access__text {
+  text-align: center;
+  margin-bottom: 80px;
+}
+/*# sourceMappingURL=app.css.map */
