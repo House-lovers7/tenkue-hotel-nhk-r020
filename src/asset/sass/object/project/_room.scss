@@ -9,6 +9,7 @@
   
   .p-room__inner {
     padding-top: 75px;
+    margin-bottom: 80px;
   }
 
 
@@ -23,7 +24,9 @@
   }
   
   
-  .c-title {
+  .c-title {    
+    margin-top: 80px;
+    font-weight: bold;
     margin-bottom: 60px;
     text-align: center;
     text-transform: uppercase;
@@ -55,6 +58,7 @@
 
 
 .p-room__subtitle {
+    margin-top: -2rem;
     margin-bottom: 1rem;
     text-transform: uppercase;
   }
