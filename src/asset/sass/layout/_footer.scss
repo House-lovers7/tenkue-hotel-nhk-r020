@@ -12,12 +12,32 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @include sp-layout() {
+      flex-direction: column;
+    }
   }
+
+  &__item {
+    @include sp-layout() {
+        width: 100%;
+        &:nth-of-type(1) {
+            margin-bottom: 1rem;
+        }
+    }
+}
 
   &__logo {
     img {
         width: auto;
         height: 20px;
+    }
+
+    @include sp-layout() {
+      font-size: 6vw;
+    }
+    @include tab-layout() {
+      font-size: 3vw;
     }
   }
 
@@ -27,13 +47,22 @@
 
   &__nav {
     display: flex;
+    @include sp-layout() {
+      flex-wrap: wrap;
+    }
 
     &__item {
-      &:not(:first-child) {
-          margin-left: 2rem;
-      }
       a {
-          color: #fff;
+        color: #fff;
+        @include sp-layout {
+          font-size: 4vw;
+        }
+        @include tab-layout {
+          font-size: 2vw;
+        }
+      }
+      @include tab-layout {
+        width: 50%;
       }
     }
   }
@@ -49,6 +78,4 @@
         color: #fff;
     }
   }
-
-
 }
