@@ -1,26 +1,44 @@
 <!DOCTYPE html>
 <html lang="ja">
-    <head>
-
-        <%- include('../_includes/_common.ejs') %> 
-
-        <title>Tenkue Hotel</title>
-
-    </head>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<link rel="stylesheet" type="text/css" href="/asset/css/app.css" />
+		<link href="https://fonts.googleapis.com/css2?family=Vollkorn:wght@400;700&display=swap" rel="stylesheet" />
+		<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet" />
+		<title>Tenkue Hotel</title>
+	</head>
 </html>
+<body >
+	<%- include('../_includes/_header') %>
+	<main>
+		<article class="p-access">
+			<div class="p-access__mv"></div>
+			<div class="p-access__inner l-content-wrap-default">
+				<h2 class="c-title">LOCATION MAP</h2>
+				<div class="p-access__imgWrap">
+					<img src="/asset/image/access_02.jpg" alt="">
+					<img src="/asset/image/access_03.jpg" alt="">
+					<img src="/asset/image/access_04.jpg" alt="">
+					<img src="/asset/image/access_05.jpg" alt="">
+					<img src="/asset/image/access_06.jpg" alt="">
+					<img src="/asset/image/access_07.jpg" alt="">
+					<img src="/asset/image/access_08.jpg" alt="">
+					<img src="/asset/image/access_09.jpg" alt="">
+				</div>
+				<p class="p-access__text"> 古き良き日本の歴史が色濃く残る大阪には、世界遺産に登録されている文化遺産が多数存在しています。<br> 一年を通して祭り等の行事や祭事、イベント、四季を楽しむ場所として多くの観光客で賑わう日本を代表する街。<br> ホテルは、大阪市内の中央に位置し、梅田、難波などの多くの歴史的観光名所に好アクセスです。 </p>
+				<h2 class="c-title">ACCESS</h2>
+				<div style="text-align: center;">
+					<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6560.166905705768!2d135.495271!3d34.703075!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000e68dc5241021%3A0x4c619b45cc7f0e19!2z44CSNTMwLTAwMDEg5aSn6Ziq5bqc5aSn6Ziq5biC5YyX5Yy65qKF55Sw77yT5LiB55uu77yR4oiS77yR!5e0!3m2!1sja!2sjp!4v1599317733526!5m2!1sja!2sjp" width="1000" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
 
-    <body>
-        <%- include('../_includes/_header') %>
+				</div>
+				<h4>【公式】TENKUE HOTEL</h4>
+				<p> 〒530-0001 大阪市北区梅田3丁目1番1号<br> TEL.06-1234-5678(代)<br> ※駐車場のご用意がございませんので、公共交通機関でお越しください。 </p>
+			</div>
+		</article>
+	</main>
+	<%- include('../_includes/_footer.ejs') %>
 
-        <main>
-
-            <article class="p-access">
-                
-            </article>
-
-        </main>
-
-        <%- include('../_includes/_footer.ejs') %>
-
-    </body>
+</body>
 </html>
