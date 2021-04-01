@@ -1,2 +1,202 @@
 .p-top {
+  
+  // 共通部分ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+  padding-top: 80px;
+
+  &__container{
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 1024px;
+    padding: 60px 0;
+
+    @include sp-layout() {
+      padding: 30px 0;
+    }
+  }
+
+  &__space {
+    padding: 0 30px;
+  }
+
+  &__title {
+    text-align: center;
+    letter-spacing: 2px;
+    margin-bottom: 60px;
+
+    @include tab-layout() {
+    font-size: 4vw;
+    }
+
+    @include sp-layout() {
+    margin-bottom: 30px;
+    font-size: 8vw;
+    }
+  }
+
+  &__text {
+    line-height: 2.5;
+    text-align: center;
+
+    @include tab-layout() {
+      font-size: 2vw;
+    }
+  
+    @include sp-layout() {
+      margin-bottom: 30px;
+      font-size: 4vw;
+    }
+  }
+
+  &__button {
+    width: 100%;
+    display: block;
+    margin-top: 40px;
+    margin-bottom: 30px;
+
+    padding: 0.6em 0.2em;
+    color: white;
+    text-align: center;
+    background-color: $color-primary;
+
+    @include sp-layout() {
+     margin-top: 20px;
+    }
+
+  }
+  // スライダーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+
+  .swiper-container {
+    width: 100%;
+    height: calc(70vh - 80px);
+    
+    img {
+        min-width: 100%;    
+        width: auto;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        @include tab-layout() {
+            height: 100%;
+        }          
+    }
+  }
+
+  // エリアガイドーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+
+  &__area-guide {
+    display: flex;
+    justify-content: space-between;
+
+    @include sp-layout() {
+      flex-wrap: wrap;
+    }
+
+    &__list {
+      width: 45%;
+
+      @include sp-layout() {
+        width: 100%;
+      }
+    }
+
+    &__list:last-child {
+      @include sp-layout() {
+        margin-top: 30px;
+      }
+    }
+
+    &__img {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 30px;
+
+      img {
+        width: 23%;
+      }
+    }
+  }
+
+  //ルームーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+
+  &__room {
+
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+
+    @include sp-layout() {
+      flex-wrap: wrap;
+    }
+    
+    &__item {
+      width: 30%;
+      @include sp-layout() {
+        width: 100%;
+      }
+      
+      p {
+        font-size: 16px;
+        @include tab-layout() {
+          font-size: 2vw;
+          }
+      
+        @include sp-layout() {
+        font-size: 4vw;
+        }
+      }
+    }
+
+    &__item:not(:first-child) {
+      @include sp-layout() {
+        margin-top: 30px;
+      }
+    }
+
+    &__subtitle {
+      font-size: 20px;
+      @include tab-layout() {
+        font-size: 2.25vw;
+        }
+    
+      @include sp-layout() {
+        font-size: 4.5vw;
+      }
+    }
+
+    &__button {
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  //アクセスーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+
+  &__access {
+    display: flex;
+    justify-content: space-between;
+
+    @include sp-layout() {
+      flex-wrap: wrap;
+    }
+    
+    &__list {
+      width: 45%;
+
+      @include sp-layout() {
+        width: 100%;
+      }
+      
+      iframe {
+        width: 100%;
+      }
+    }
+    &__list:not(:first-child) {
+      @include sp-layout() {
+        margin-top: 30px;
+      }
+    }
+  }
 }
