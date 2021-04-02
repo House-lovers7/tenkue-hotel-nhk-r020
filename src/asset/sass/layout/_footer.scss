@@ -43,6 +43,8 @@
 
   li {
     list-style: none;
+  
+
   }
 
   &__nav {
@@ -52,6 +54,21 @@
     }
 
     &__item {
+      &:not(:first-child) {
+        margin-left: 2em;
+      }
+      @include tab-layout {
+        width: 50%;
+        &:not(:first-child) {
+          margin-left: 1.5em;
+        }
+      }
+      @include sp-layout {
+        &:not(:first-child) {
+          margin-left: 0;
+        }
+      }
+
       a {
         color: #fff;
         @include sp-layout {
@@ -60,9 +77,6 @@
         @include tab-layout {
           font-size: 2vw;
         }
-      }
-      @include tab-layout {
-        width: 50%;
       }
     }
   }
