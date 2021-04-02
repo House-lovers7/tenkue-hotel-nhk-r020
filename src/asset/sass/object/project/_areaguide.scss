@@ -1,6 +1,15 @@
 .p-areaguide {
   margin-top: 80px;
   padding-bottom: 150px;
+
+  @include tab-layout() {
+    padding-bottom: 80px;
+  }
+
+  @include sp-layout() {
+    padding-bottom: 75px;
+  }
+  
   &__mv {
     width: 100%;
     height: 60vh;
@@ -12,23 +21,54 @@
 
   &__inner {
     padding-top:75px;
+
+    @include tab-layout() {
+      padding-right: 3% !important;
+      padding-left: 3% !important;
+    }
+
+    @include sp-layout() {
+      padding-top: 50px;
+    }
   }
   
   &__subtitle {
     font-size: 18px;
     text-align: center;
     margin-bottom: 30px;
+
+    @include tab-layout() {
+      font-size: 2.25vw;
+    }
+
+    @include sp-layout() {
+      margin-bottom: 20px;
+      font-size: 4.5vw;
+    }
   }
 
   &__text {
     margin-bottom: 60px;
     text-align: center;
+
+    @include tab-layout() {
+      font-size: 2vw;
+    }
+
+    @include sp-layout() {
+      margin-bottom: 30px;
+      font-size: 4vw;
+    }
   }
 
   &__map {
     width: 60%;
     margin: 0 auto 50px;
     display: block;
+
+    @include sp-layout() {
+      margin-bottom: 30px;
+    }
   }
 
   &__detailButton {
@@ -41,6 +81,14 @@
     position: relative;
     font-size: 14px;
     cursor: pointer;
+
+    @include sp-layout() { 
+      font-size: 3.5vw;
+    }
+
+    @include tab-layout() {
+      font-size: 1.75vw;
+    }
 
     &::after {
       content: '';
@@ -57,7 +105,7 @@
     }
   }
 
-  .l-contact-wrap-default {
+  &-wrap-default {
     position: relative;
     max-width: 1024px;
     margin-right: auto;
@@ -65,6 +113,11 @@
     box-sizing: content-box !important;
     padding-right: 2.4% !important;
     padding-left: 2.4% !important;
+
+    @include sp-layout() {
+          padding-right: 5% !important;
+          padding-left: 5% !important;
+    }
   }
   
   .c-title {
@@ -73,6 +126,17 @@
     letter-spacing: 2px;
     position: relative;
     font-size: 24px;
+
+    @include tab-layout() {
+      margin-bottom: 50px;
+      font-size: 3vw;
+    }
+
+    @include sp-layout() {
+      font-size: 6vw;
+      margin-bottom: 40px;
+    }
+
     &::after {
       content: '';
       position: absolute;
@@ -89,17 +153,30 @@
     display: flex;
     margin-bottom: 50px;
     justify-content: space-between;
+
+    @include sp-layout() {
+      flex-wrap: wrap;
+    }
   
   }
 
   .l-col__list {
     width: 30%;
+
+    @include sp-layout() {
+      width: 100%;
+      &:not(:first-child) {
+        margin-top: 30px;
+      }
+    }
   
     h4 {
       text-align: center;
       margin-bottom: 10px;
     }
   }
+
+  //モーダルーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 
   .p-modal {
     display: none;
@@ -112,10 +189,6 @@
     z-index: 102;
     overflow: scroll;
 
-    img {
-      margin-bottom: 15px;
-    }
-  
     &__closeButton {
       width: 20px;
       height: 20px;
@@ -137,8 +210,37 @@
       position: relative;
       z-index: 200;
 
+      @include sp-layout() {
+        width: 95%;
+      }
+
       p {
         margin-bottom: 16px;
+
+        @include sp-layout() {
+          font-size: 4vw;
+          &:not(:first-child) {
+            margin-bottom: 15px;
+          }
+        }
+
+        @include tab-layout() {
+          font-size: 2vw;
+          &:not(:first-child) {
+            margin-bottom: 15px;
+          }
+        }
+      }
+
+      a {
+
+        @include tab-layout() {
+          font-size: 2vw;
+        }
+
+        @include sp-layout() {
+          font-size: 4vw;
+        }
       }
 
       h4 {
@@ -162,5 +264,4 @@
       z-index: 100;
     }
   }
-
 }
