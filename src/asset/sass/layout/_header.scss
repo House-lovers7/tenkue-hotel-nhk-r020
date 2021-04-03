@@ -94,6 +94,7 @@
     @media screen and (max-width: 1000px){
         opacity: 0;        
 }
+}
 
 .l-global_nav_item:not(:last-child) {
     @media screen and (max-width: 1000px){
@@ -105,7 +106,6 @@
     visibility: visible;
     border-radius: 0;
 }
-
 
 .l-container {
     @media screen and (max-width: 1000px){
