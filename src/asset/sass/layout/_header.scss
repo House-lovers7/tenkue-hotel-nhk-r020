@@ -2,116 +2,27 @@
     width: 100%;
     height: 80px;
     padding: 10px 3%;
-    background-color: #fff;
+    background-color: $color-light;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 99;
     box-shadow: 3px 3px #f7f7f7;
-}
-
-.l-header__inner {
-    width: 100%;
-    height: 60px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-}
-
-.l-header__logo {
-    width: auto;
-    height: 25px;
-}
-
-.js-nav-cover {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 9;
-    width: 100%;
-    height: 120%;
-    background-color: #222;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    opacity: 0;
-    transition: all 0.3s cubic-bezier(0.52, 0, 0.5, 1.8);
-
-@media screen and (min-width: 1001px){
-    display: none;
-}    
-}
-
-
-.is-hidden {
-    @media screen and (max-width: 1000px){
-        visibility: hidden;
-    }
-}
-
-
-
-.l-global_nav_box {    
-    display: flex;
-    align-items: center;
-}
-
-.l-global_nav {
-    @media screen and (max-width: 1000px){
-        position: fixed;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        right: 0;
-        z-index: 1;
+    &__inner {
         width: 100%;
-        height: 120%;
-        background: transparent;
-        transition: all 0.5s cubic-bezier(0.52, 0, 0.5, 1.8);
-        z-index: 9;
+        height: 60px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
     }
-}
+    &__logo {
+        width: auto;
+        height: 25px;
 
-
-.l-global_nav_link {
-    padding: 0.2em 1em;
-    text-align: center;
-    letter-spacing: 0.1rem;
-    position: relative;
-    display: block;
-    transition: 0.3s;
-
-    @media screen and (max-width: 1000px){
-        color: #fff;
+        img {
+            width: auto;
+            height: 100%;
+        }
     }
-}
-
-.l-global_nav_item {
-    list-style: none;
-    text-transform: uppercase;
-    @media screen and (max-width: 1000px){
-        opacity: 0;        
-}
-}
-
-.l-global_nav_item:not(:last-child) {
-    @media screen and (max-width: 1000px){
-        opacity: 0;
-    }
-}
-
-.is-drawerActive .l-global_nav {
-    visibility: visible;
-    border-radius: 0;
-}
-
-.l-container {
-    @media screen and (max-width: 1000px){
-    position: absolute;
-    top: 35%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
 }

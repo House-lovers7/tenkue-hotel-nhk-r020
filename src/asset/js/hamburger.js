@@ -10,7 +10,6 @@ $(function(){
 
   
   // ページ遷移のJS
-
   $(window).load(function() {
     setTimeout(function(){
       window.location.href = '/';
@@ -18,14 +17,10 @@ $(function(){
   });
 
 
-  // ページ遷移のJS
-
-
   // ページを開くとき
 
-
   $(function () {
-    $('.btn-trigger').on('click', function () {
+    $('.c-button').on('click', function () {
       $(this).toggleClass('active');
       $("#js-buttonHamburger").toggleClass('active');
     })
@@ -35,6 +30,13 @@ $(function(){
       $("#js-buttonHamburger").toggleClass('active');
     })
   });
-
-
   // ページを閉じる時
+
+
+
+  $(function(){
+    $('.btn-trigger').on('click', function() {
+      $(this).toggleClass('active');
+      return false;
+    });
+  });
