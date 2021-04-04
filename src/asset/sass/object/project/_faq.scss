@@ -1,2 +1,119 @@
 .p-faq {
+  padding: 150px 0;
+
+  @include sp-layout() {
+      padding: 150px 0 75px;
+  }
+
+  &__inner {
+  }
+
+  &__title {
+      margin-bottom: 50px;
+      padding: 0.2em 1em;
+      color: $color-light;
+      background-color: $color-primary;
+      font-weight: normal;
+      @include font-size(20);
+
+      @include sp-layout() {
+          margin-bottom: 25px;
+      }
+  }
+
+  &__list:not(:last-child) {
+      margin-bottom: 30px;
+
+      @include sp-layout() {
+          margin-bottom: 15px;
+      }
+  }
+
+  &__term {
+      padding: 0.5em 2em 0.5em 3em;
+      border-bottom: 2px solid rgba($color-primary, 0.1);
+      position: relative;
+      cursor: pointer;
+
+      &.is-active {
+          border-bottom: none;
+      }
+
+      &::before {
+          content: '';
+          width: 2em;
+          height: 2em;
+          position: absolute;
+          top: 50%;
+          left: 0;
+          transform: translateY(-50%);
+          background-image: url(/asset/image/icon_question.svg);
+          background-position: center;
+          background-size: contain;
+          background-repeat: no-repeat;
+      }
+
+      &::after {
+          content: '';
+          width: 1.2em;
+          height: 1.2em;
+          position: absolute;
+          top: 50%;
+          right: 0.5em;
+          transform: translateY(-50%);
+          background-image: url(/asset/image/icon_arrow_bottom.svg);
+          background-position: center;
+          background-size: contain;
+          background-repeat: no-repeat;
+      }
+
+      &.is-active::after {
+          background-image: url(/asset/image/icon_arrow_top.svg);
+      }
+  }
+
+  &__description {
+      height: 0;
+      overflow: hidden;
+      padding: 0 2em 0 4.5em;
+      opacity: 0;
+      position: relative;
+      transition: all 0.3s;
+
+      @include sp-layout() {
+          padding-left: 2.5em;
+      }
+
+      &.is-active {
+          height: auto;
+          margin-bottom: 4em;
+          padding: 0.5em 2em 1.5em 4.5em;
+          border-bottom: 2px solid rgba($color-primary, 0.1);
+          opacity: 1;
+          transition: all 0.3s;
+
+          @include sp-layout() {
+              padding-left: 2.5em;
+          }
+      }
+
+      &::before {
+          content: '';
+          width: 1.8em;
+          height: 1.8em;
+          position: absolute;
+          top: 2em;
+          left: 2em;
+          transform: translateY(-50%);
+          background-image: url(/asset/image/icon_answer.svg);
+          background-position: center;
+          background-size: contain;
+          background-repeat: no-repeat;
+
+          @include sp-layout() {
+              top: 2em;
+              left: 0;
+          }
+      }
+  }
 }
