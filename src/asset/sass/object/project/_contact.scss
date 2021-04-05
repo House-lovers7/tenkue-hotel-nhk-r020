@@ -117,3 +117,119 @@ option {
 .u-pc {
     display: block;
 }
+
+
+// レスポンシブ対応
+
+.p-contact {
+    margin-top: 80px;
+    padding-bottom: 150px;
+    @include tab-layout() {
+        padding-bottom: 80px;
+    }
+    @include sp-layout() {
+        padding-bottom: 75px;
+    }
+    &__mv {
+        width: 100%;
+        height: 60vh;
+        background-image: url(/asset/image/contact_01.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+    &__inner {
+        padding-top: 75px;
+        @include sp-layout() {
+            padding-top: 50px;
+        }
+    }
+    &__title {
+        margin-bottom: 1em;
+        // color: $color-light;
+        text-align: center;
+    }
+    &__subtitle {
+        margin-bottom: 30px;
+        text-align: center;
+        @include font-size(18);
+        @include sp-layout() {
+            margin-bottom: 20px;
+        }
+    }
+    &__text {
+        margin-bottom: 60px;
+        text-align: center;
+        @include sp-layout() {
+            margin-bottom: 30px;
+        }
+    }
+    &__inputWrap {
+        margin-bottom: 30px;
+        display: flex;
+        @include sp-layout() {
+            flex-direction: column;
+        }
+        // &:nth-last-of-type(2) {
+        //     margin-bottom: 10px;
+        // }
+    }
+    &__label {
+        width: 25%;
+        margin: 0 auto;
+        padding: 0.6em;
+        color: $color-light;
+        background-color: $color-primary;
+        @include sp-layout() {
+            width: 100%;
+        }
+    }
+    &__checkLabel {
+        max-width: 350px;
+        margin: 0 auto;
+    }
+    &__input {
+        width: 70%;
+        padding: 0.6em;
+        @include font-size(16);
+        background-color: $color-gold;
+        border: none;
+        @include sp-layout() {
+            width: 100%;
+            padding: 1em;
+        }
+    }
+    &__textarea {
+        width: 70%;
+        padding: 0.6em;
+        background-color: $color-gold;
+        border: none;
+        @include font-size(16);
+        @include sp-layout() {
+            width: 100%;
+        }
+    }
+    &__checkbox {
+        @include font-size(14);
+    }
+    &__btn {
+        width: 300px;
+        margin: 0 auto 20px;
+        padding: 1em;
+        // color: $color-light;
+        background-color: transparent;
+        border: 1px solid #222;
+        appearance: none;
+        display: block;
+        cursor: pointer;
+        @include font-size(16);
+    }
+    &__note {
+        margin-bottom: 20px;
+    }
+    &__note,
+    &__note a {
+        text-align: center;
+        @include font-size(14);
+    }
+}
