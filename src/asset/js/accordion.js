@@ -1,10 +1,10 @@
-
+// アコーディオンの実装はこちらに記述してください
 
 const menu = document.querySelectorAll(".js-accordion-trigger");
 
 function toggle() {
   const content = this.nextElementSibling;
-  this.classList.toggle("is-active");git 
+  this.classList.toggle("is-active");
   content.classList.toggle("is-active");
 }
 
