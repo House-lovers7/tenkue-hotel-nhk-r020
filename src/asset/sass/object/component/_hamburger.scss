@@ -1,2 +1,227 @@
-.c-hamburger {
+.c-button {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    appearance: none;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.p-hamburger {
+    position: absolute;
+    top: 0;
+    right: 1.5%;
+    width: 48px;
+    height: 48px;
+    transition: all 0.3s ease-in-out;
+    @include pc-layout() {
+        display: none;
+    }
+    @include tab-layout() {
+        position: absolute;
+        top: 0;
+        right: 1.5%;
+        display: block;
+    }
+    @include sp-layout() {
+        right: 2%;
+    }
+}
+
+.p-hamburger_line {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 5px;
+    margin: auto;
+    width: 20px;
+    height: 2px;
+    background-color: $color-primary;
+    transition: inherit;
+}
+.p-hamburger_line::before,
+.p-hamburger_line::after {
+    position: absolute;
+    display: block;
+    // width: 100%;
+    height: 100%;
+    right: 0;
+    background-color: inherit;
+    content: '';
+    transition: inherit;
+}
+.p-hamburger_line::before {
+    width: 25px;
+    top: -8px;
+}
+.p-hamburger_line::after {
+    width: 15px;
+    top: 8px;
+}
+
+.p-hamburger[aria-expanded='true'] .p-hamburger_line {
+    background-color: transparent;
+}
+
+.p-hamburger[aria-expanded='true'] .p-hamburger_line::before,
+.p-hamburger[aria-expanded='true'] .p-hamburger_line::after {
+    top: 0;
+    background-color: $color-light;
+}
+
+.p-hamburger[aria-expanded='true'] .p-hamburger_line::before {
+    width: 20px;
+    transform: rotate(45deg);
+}
+
+.p-hamburger[aria-expanded='true'] .p-hamburger_line::after {
+    width: 20px;
+    transform: rotate(-45deg);
+}
+
+.u-visuallyHidden {
+    position: fixed;
+    white-space: nowrap;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    margin: -1px;
+}
+
+.js-nav-cover {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9;
+    width: 100%;
+    height: 120%;
+    background-color: $color-default;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0;
+    transition: all 0.3s cubic-bezier(0.52, 0, 0.5, 1.8);
+    @include pc-layout() {
+        display: none;
+    }
+    @include tab-layout() {
+        display: block;
+    }
+}
+.is-drawerActive .js-nav-cover {
+    // opacity: 0;
+}
+
+.l-global_nav {
+    @include tab-layout() {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        right: 0;
+        z-index: 1;
+        visibility: hidden;
+        width: 100%;
+        height: 120%;
+        background: transparent;
+        background-image: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 1)), url(../image/washi_light.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;        
+        background-color: $color-default;
+        opacity: 0;
+        transition: all 0.5s cubic-bezier(0.52, 0, 0.5, 1.8);
+        z-index: 9;
+    }
+}
+.is-hidden {
+    @include pc-layout() {
+    }
+    @include tab-layout() {
+        visibility: hidden;
+    }
+}
+
+.is-drawerActive .l-global_nav {
+    visibility: visible;
+    border-radius: 0;
+    opacity: 1;
+}
+
+.l-container {
+    @include tab-layout() {
+        position: absolute;
+        top: 35%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.l-global_nav_box {
+    @include pc-layout() {
+        display: flex;
+        align-items: center;
+    }
+}
+
+.l-global_nav_item {
+    list-style: none;
+    text-transform: uppercase;
+
+    @include tab-layout() {
+        // opacity: 0;
+    }
+    &:not(:last-child) {
+        @include pc-layout() {
+            margin-right: 30px;
+        }
+        @include tab-layout() {
+            margin-bottom: 1.6rem;
+        }
+    }
+}
+
+.l-global_nav_link {
+    padding: 0.2em 1em;
+    text-align: center;
+    letter-spacing: 0.1rem;
+    position: relative;
+    display: block;
+    transition: 0.3s;
+    @include tab-layout() {
+        color: $color-light;
+    }
+
+    &:hover {
+        background-color: rgba($color-border, 0.2);
+    }
+}
+
+.l-global_nav_link::after {
+    position: absolute;
+    bottom: -10%;
+    left: 25%;
+    content: '';
+    width: 50%;
+    height: 1px;
+    background: rgba($color-primary, 0.7);
+    transform: scale(0, 1);
+    transform-origin: right top;
+    transition: transform 0.4s;
+}
+.l-global_nav_link:hover::after {
+    transform-origin: left top;
+    transform: scale(1, 1);
+}
+
+.is-drawerActive {
+    overflow-y: hidden;
 }
