@@ -3,6 +3,8 @@
   // display: flex;
   text-align: center;
   margin-bottom: 50px;
+
+
   
   &::after {
     content: '';
@@ -24,6 +26,19 @@
 
 .p-access {
 
+  margin-top: 80px;
+  padding-bottom: 150px;
+
+  @include tab-layout() {
+    padding-bottom: 80px;
+}
+@include sp-layout() {
+    padding-bottom: 75px;
+
+    @include sp-layout() {
+      padding-top: 50px;
+  }
+}
   &__mv {
     // 親要素依存
       width: 100%;
@@ -36,6 +51,10 @@
 
   &__inner {
       padding-top: 75px;
+
+      @include sp-layout() {
+        padding-top: 50px;
+    }
   }
 
   &__imgWrap {
@@ -44,7 +63,9 @@
       justify-content: space-between;
       flex-wrap: wrap;
 
-
+      @include sp-layout() {
+        margin-bottom: 25px;
+    }
 
       img {
           width: 23%;
@@ -56,6 +77,10 @@
   &__text {
     text-align: center;
       margin-bottom: 80px;
+
+      @include sp-layout() {
+        margin-bottom: 40px;
+    }
 
   }
 }
