@@ -1,20 +1,28 @@
 // 画像スライダーの実装はこちらに記述してください
-document.addEventListener('DOMContentLoaded', function() {
-  //インスタス化
-  const hero = new HeroSlider();
-});
 
-class HeroSlider {
-  constructor() {
-    this.swiper = new Swiper('.swiper-container', {
-      loop: true,
-      effect: 'fade',
-      speed: 2000,
-      //○秒後にスライド
-      autoplay: {
-        delay: 4000,
-        disableOnInteraction: false
-      },
-    });
-  }
-}
+$(function(){
+  //スライドの画像の数を取得
+  $('.swiper-container').each(function(){
+    let $slides = $(this).find('.swiper-slide');
+    let slideNum = $slides.length;
+    let currentIdx = 0; //何番目か
+
+    //最初の画像をフェードイン
+    $('.swiper-slide').eq(currentIdx).fadeIn(2000);
+    //３秒後に次のスライドを表示
+    setInterval(NextSlide,4000);
+    
+    //次のスライドを表示するメソッド
+    function NextSlide(){
+      let nextIdx = currentIdx + 1;
+      //最後のスライドの場合は最初に戻る
+      if (nextIdx > (slideNum - 1)){
+        nextIdx = 0
+      }
+      //現在のスライドをフェードアウト
+      $('.swiper-slide').eq(currentIdx).fadeOut(2000);
+      $('.swiper-slide').eq(nextIdx).fadeIn(2000);
+      currentIdx = nextIdx;
+    }
+  });
+});
